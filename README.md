@@ -116,7 +116,7 @@ git push origin Flugzeug
 **Schritt 5:** Server aktualisieren *(wenn Proxmox-Container eingerichtet)*
 ```bash
 # Auf Proxmox Host:
-pct enter [CONTAINER-ID]
+pct enter 102
 
 # Im Container:
 cd /var/www/nordcopter
