@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Nord-Copter (dark background)">
+<defs>
+<g id="nc-unit">
+
+<path d="M185,191 A150,150 0 1 1 415,191" fill="none" stroke="#3fa23b" stroke-width="15" stroke-linecap="round"></path>
+
+<path d="M297,104 C294,175 285,215 270,266 Q300,290 330,266 C315,215 306,175 303,104 Q300,96 297,104 z" fill="#fff"></path>
+
+<g transform="translate(300,95)">
+<path d="M0,0 C19,-42 15,-118 0,-146 C-15,-118 -19,-42 0,0 z" fill="#fff" transform="rotate(-35)"></path>
+<path d="M0,0 C19,-42 15,-118 0,-146 C-15,-118 -19,-42 0,0 z" fill="#fff" transform="rotate(35)"></path>
+</g>
+
+<circle cx="300" cy="95" r="25" fill="#fff" stroke="#fff" stroke-width="8"></circle>
+<circle cx="300" cy="95" r="7" fill="#fff"></circle>
+</g>
+</defs>
+<use href="#nc-unit" transform="rotate(45 300 300)"></use>
+<use href="#nc-unit" transform="rotate(135 300 300)"></use>
+<use href="#nc-unit" transform="rotate(225 300 300)"></use>
+<use href="#nc-unit" transform="rotate(315 300 300)"></use>
+
+<g stroke="#3fa23b" stroke-width="5" stroke-linecap="round">
+<line x1="300" y1="112" x2="300" y2="488"></line>
+<line x1="112" y1="300" x2="488" y2="300"></line>
+</g>
+
+<circle cx="300" cy="300" r="30" fill="#fff" stroke="#3fa23b" stroke-width="6"></circle>
+
+<g fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="40" text-anchor="middle">
+<text x="300" y="222">N</text>
+<text x="388" y="314">O</text>
+<text x="300" y="406">R</text>
+<text x="212" y="314">D</text>
+</g>
+</svg>

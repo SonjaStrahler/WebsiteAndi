@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Impressum &amp; Barrierefreiheit – Nord-Copter GmbH</title>
+  <meta name="description" content="Impressum und Erklärung zur Barrierefreiheit der Nord-Copter GmbH, Stuhr.">
+  <style>
+    @font-face {
+      font-family: 'Michroma';
+      src: url('fonts/Michroma-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --bg:        #0e151f;
+      --panel:     #16202c;
+      --panel-2:   #1b2735;
+      --line:      #27333f;
+      --line-soft: #202b38;
+      --text:      #dbe3ec;
+      --muted:     #94a2b2;
+      --accent:    #3fa23b;
+      --accent-dim:#70c56c;
+      --focus:     #9be197;
+      --maxw:      760px;
+      --display:   "Michroma", system-ui, sans-serif;
+      --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Roboto Mono", Menlo, Consolas, monospace;
+      --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* Skip link */
+    .skip {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: var(--accent);
+      color: #10161f;
+      padding: .7rem 1.1rem;
+      font-weight: 700;
+      border-radius: 0 0 8px 0;
+      z-index: 10;
+    }
+    .skip:focus { left: 0; }
+
+    a {
+      color: var(--accent-dim);
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+    a:hover { color: #9be197; }
+
+    :focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header.site {
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #111b26 0%, var(--bg) 100%);
+    }
+    .head-inner {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 26px 0;
+    }
+    .mark { flex: 0 0 auto; }
+    .mark img { display: block; }
+    .brand-name {
+      font-family: var(--display);
+      font-weight: 400;
+      letter-spacing: .5px;
+      font-size: 1.15rem;
+      margin: 0;
+    }
+    .brand-tag {
+      font-family: var(--mono);
+      font-size: .72rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 2px 0 0;
+    }
+
+    main { padding: 68px 0 24px; }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: .72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 10px;
+    }
+
+    h1 {
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: clamp(1.35rem, 4.2vw, 2.05rem);
+      line-height: 1.32;
+      letter-spacing: 0;
+      margin: 0 0 14px;
+    }
+    .lead {
+      color: var(--muted);
+      margin: 0 0 8px;
+      max-width: 60ch;
+    }
+
+    /* Section cards */
+    section.block {
+      background: var(--panel);
+      border: 1px solid var(--line-soft);
+      border-radius: 14px;
+      padding: 30px 30px 26px;
+      margin: 34px 0;
+    }
+    section.block > h2 {
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: 1.35rem;
+      margin: 0 0 4px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+    }
+    section.block > h2::before {
+      content: "";
+      position: absolute;
+      left: -30px;
+      top: 4px;
+      width: 4px;
+      height: 1.1em;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-size: .82rem;
+      font-family: var(--mono);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent-dim);
+      margin: 26px 0 6px;
+    }
+
+    p { margin: 0 0 4px; }
+    .sub { color: var(--muted); }
+
+    address {
+      font-style: normal;
+      line-height: 1.7;
+    }
+
+    dl.facts {
+      margin: 6px 0 0;
+    }
+    dl.facts > div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 16px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--line-soft);
+    }
+    dl.facts > div:last-child { border-bottom: 0; }
+    dl.facts dt {
+      flex: 0 0 190px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    dl.facts dd {
+      flex: 1 1 260px;
+      margin: 0;
+    }
+    @media (max-width: 560px) {
+      dl.facts dt { flex-basis: 100%; }
+      section.block { padding: 24px 20px; }
+      section.block > h2::before { left: -20px; }
+    }
+
+    footer.site {
+      border-top: 1px solid var(--line);
+      margin-top: 40px;
+      padding: 26px 0 44px;
+    }
+    footer .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    footer a { color: var(--muted); }
+    footer nav a { margin-left: 18px; }
+    @media (max-width: 480px) {
+      footer nav a { margin: 0 18px 0 0; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+  <header class="site">
+    <div class="wrap head-inner">
+      <span class="mark" aria-hidden="true">
+        <img src="logo-dark.svg" alt="" width="40" height="40">
+      </span>
+      <div>
+        <p class="brand-name">Nord-Copter GmbH</p>
+        <p class="brand-tag">Drohnen&nbsp;·&nbsp;Inspektion&nbsp;·&nbsp;Training</p>
+      </div>
+    </div>
+  </header>
+
+  <main id="inhalt" class="wrap">
+    <p class="eyebrow">Rechtliches</p>
+    <h1>Impressum &amp; Barrierefreiheit</h1>
+    <p class="lead">Pflichtangaben nach § 5 Digitale-Dienste-Gesetz (DDG) sowie die Erklärung zur Barrierefreiheit dieser Website.</p>
+
+    <!-- ============ IMPRESSUM ============ -->
+    <section class="block" aria-labelledby="impressum-h">
+      <h2 id="impressum-h">Impressum</h2>
+
+      <h3>Angaben gemäß § 5 DDG</h3>
+      <address>
+        <strong>Nord-Copter GmbH</strong><br>
+        Hämelheider Weg 8<br>
+        28816 Stuhr
+      </address>
+
+      <dl class="facts">
+        <div>
+          <dt>Vertreten durch</dt>
+          <dd>Geschäftsführer: Andreas Rüdel, Heike Rüdel</dd>
+        </div>
+        <div>
+          <dt>Telefon</dt>
+          <dd><a href="tel:+491755787960">+49 (0) 175 5787960</a></dd>
+        </div>
+        <div>
+          <dt>E-Mail</dt>
+          <dd><a href="mailto:A.Ruedel@gmx.de">A.Ruedel@gmx.de</a></dd>
+        </div>
+        <div>
+          <dt>Internet</dt>
+          <dd><a href="https://nord-copter.de">www.nord-copter.de</a></dd>
+        </div>
+        <div>
+          <dt>Registereintrag</dt>
+          <dd>Amtsgericht Walsrode · HRB 213751</dd>
+        </div>
+        <div>
+          <dt>Umsatzsteuer-ID</dt>
+          <dd>ist beantragt</dd>
+        </div>
+      </dl>
+
+      <h3>Zuständige Aufsichtsbehörde</h3>
+      <p>Für den Betrieb unbemannter Luftfahrtsysteme (Drohnen):</p>
+      <address>
+        Niedersächsische Landesbehörde für Straßenbau und Verkehr<br>
+        Dezernat 42 (Luftverkehr)<br>
+        Göttinger Chaussee 76 A<br>
+        30453 Hannover<br>
+        <a href="mailto:Drohnen@nlstbv.niedersachsen.de">Drohnen@nlstbv.niedersachsen.de</a>
+      </address>
+
+      <h3>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h3>
+      <address>
+        Andreas Rüdel<br>
+        Hämelheider Weg 8<br>
+        28816 Stuhr
+      </address>
+
+      <h3>Verbraucherstreitbeilegung</h3>
+      <p class="sub">Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+      <h3>Haftung für Inhalte</h3>
+      <p class="sub">Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.</p>
+
+      <h3>Haftung für Links</h3>
+      <p class="sub">Unser Angebot enthält gegebenenfalls Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte können wir keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+
+      <h3>Urheberrecht</h3>
+      <p class="sub">Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+    </section>
+
+    <!-- ============ BARRIEREFREIHEIT ============ -->
+    <section class="block" aria-labelledby="bf-h">
+      <h2 id="bf-h">Erklärung zur Barrierefreiheit</h2>
+      <p>Diese Erklärung gilt für die Website <a href="https://nord-copter.de">nord-copter.de</a> der Nord-Copter GmbH.</p>
+
+      <h3>Rechtsgrundlage und Ziel</h3>
+      <p class="sub">Wir sind bestrebt, unsere Website im Einklang mit dem Barrierefreiheitsstärkungsgesetz (BFSG), der BFSG-Verordnung (BFSGV) sowie den Anforderungen der europäischen Norm EN 301 549 (insbesondere WCAG 2.1, Konformitätsstufe AA) barrierefrei zugänglich zu machen.</p>
+
+      <h3>Stand der Vereinbarkeit</h3>
+      <p class="sub">Die Website befindet sich derzeit im Aufbau (Vorab-Seite). Wir richten sie von Beginn an an den genannten Anforderungen aus; einzelne Inhalte sind möglicherweise noch nicht vollständig barrierefrei.</p>
+
+      <h3>Nicht barrierefreie Inhalte</h3>
+      <p class="sub">Nach unserer Einschätzung sind aktuell keine wesentlichen Inhalte von der Barrierefreiheit ausgenommen. Mit dem weiteren Ausbau der Website können einzelne Elemente (z. B. eingebundene PDF-Dokumente oder Videos) vorübergehend noch nicht vollständig barrierefrei sein. Eine barrierefreie Überarbeitung erfolgt fortlaufend.</p>
+
+      <h3>Verwendete Technologien</h3>
+      <p class="sub">Die Barrierefreiheit dieser Website beruht auf HTML, CSS und – soweit eingesetzt – JavaScript und WAI-ARIA.</p>
+
+      <h3>Erstellung dieser Erklärung</h3>
+      <p class="sub">Diese Erklärung wurde am 21.07.2026 erstellt. Grundlage ist eine Selbstbewertung.</p>
+
+      <h3>Feedback und Kontakt</h3>
+      <p class="sub">Sie haben eine Barriere festgestellt oder benötigen Inhalte in barrierefreier Form? Bitte kontaktieren Sie uns – wir helfen weiter:</p>
+      <address>
+        Nord-Copter GmbH<br>
+        Andreas Rüdel<br>
+        Hämelheider Weg 8, 28816 Stuhr<br>
+        Telefon: <a href="tel:+491755787960">+49 (0) 175 5787960</a><br>
+        E-Mail: <a href="mailto:A.Ruedel@gmx.de">A.Ruedel@gmx.de</a>
+      </address>
+    </section>
+
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <span>© <span id="jahr">2026</span> Nord-Copter GmbH</span>
+      <nav aria-label="Rechtliches">
+        <a href="/">Start</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('jahr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
