@@ -9,6 +9,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
+  @font-face {
+    font-family: 'Michroma';
+    src: url('fonts/Michroma-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
   :root {
@@ -19,12 +27,12 @@
     --text-primary: #e6edf3;
     --text-secondary: #8b949e;
     --text-muted: #484f58;
-    --accent: #e8622a;
-    --accent-hover: #d45520;
-    --accent-glow: rgba(232, 98, 42, 0.12);
+    --accent: #3fa23b;
+    --accent-hover: #348a31;
+    --accent-glow: rgba(63, 162, 59, 0.14);
     --border: rgba(255,255,255,0.06);
-    --border-hover: rgba(232,98,42,0.25);
-    --font-display: 'DM Sans', sans-serif;
+    --border-hover: rgba(63,162,59,0.30);
+    --font-display: 'Michroma', 'DM Sans', sans-serif;
     --font-body: 'DM Sans', sans-serif;
     --font-mono: 'Space Mono', monospace;
     --radius: 14px;
@@ -111,6 +119,10 @@
     justify-content: center;
   }
 
+  .logo-mark img {
+    display: block;
+  }
+
   .logo-mark svg {
     width: 34px;
     height: 34px;
@@ -123,9 +135,9 @@
 
   .logo-text {
     font-family: var(--font-display);
-    font-weight: 700;
+    font-weight: 400;
     font-size: 1.15rem;
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
   }
 
   .logo-text span { color: var(--accent); }
@@ -167,6 +179,61 @@
     z-index: 1;
   }
 
+  .hero-flyer {
+    position: absolute;
+    top: 6.5rem;
+    right: -6rem;
+    width: clamp(180px, 28vw, 360px);
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    filter: drop-shadow(0 18px 35px rgba(0, 0, 0, 0.45));
+    transform-origin: center;
+    animation: droneFlyIn 8s linear 0.55s 1 both;
+  }
+
+  .hero-badge,
+  .hero h1,
+  .hero-sub {
+    position: relative;
+    z-index: 2;
+  }
+
+  @keyframes droneFlyIn {
+    0% {
+      opacity: 0;
+      transform: perspective(700px) translate(240px, -130px) scale(0.22) rotateX(22deg) rotateY(-34deg) rotateZ(-18deg);
+    }
+    16% {
+      opacity: 0.95;
+    }
+    42% {
+      opacity: 0.95;
+      transform: perspective(700px) translate(-150px, 22px) scale(1.08) rotateX(16deg) rotateY(-22deg) rotateZ(-6deg);
+    }
+    56% {
+      opacity: 0.95;
+      transform: perspective(700px) translate(-150px, 22px) scale(1.08) rotateX(16deg) rotateY(-22deg) rotateZ(-6deg);
+    }
+    66% {
+      opacity: 0.92;
+      transform: perspective(700px) translate(-126px, 0) scale(1.04) rotateX(16.4deg) rotateY(-22.8deg) rotateZ(-3deg);
+    }
+    80% {
+      opacity: 0.72;
+      transform: perspective(700px) translate(-84px, -38px) scale(0.96) rotateX(17deg) rotateY(-24deg) rotateZ(1deg);
+    }
+    92% {
+      opacity: 0.34;
+      transform: perspective(700px) translate(-26px, -90px) scale(0.84) rotateX(18deg) rotateY(-26deg) rotateZ(5deg);
+    }
+    100% {
+      opacity: 0;
+      transform: perspective(700px) translate(55px, -150px) scale(0.68) rotateX(19deg) rotateY(-28deg) rotateZ(8deg);
+    }
+  }
+
   .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -187,9 +254,9 @@
   .hero h1 {
     font-family: var(--font-display);
     font-size: clamp(2.6rem, 6.5vw, 5rem);
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.06;
-    letter-spacing: -0.03em;
+    letter-spacing: 0;
     margin-bottom: 1.5rem;
     animation: fadeInUp 0.8s ease-out 0.1s both;
   }
@@ -300,8 +367,8 @@
   .info-block h2 {
     font-family: var(--font-display);
     font-size: clamp(1.4rem, 3vw, 1.8rem);
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-weight: 400;
+    letter-spacing: 0;
     margin-bottom: 1.5rem;
   }
 
@@ -335,15 +402,15 @@
     border: 1px solid var(--border);
     border-radius: 20px;
     padding: 3.5rem;
-    background: linear-gradient(145deg, var(--bg-card) 0%, rgba(232,98,42,0.03) 100%);
+    background: linear-gradient(145deg, var(--bg-card) 0%, rgba(63,162,59,0.03) 100%);
     text-align: center;
   }
 
   .cta-box h2 {
     font-family: var(--font-display);
     font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-weight: 400;
+    letter-spacing: 0;
     margin-bottom: 0.75rem;
   }
 
@@ -386,7 +453,7 @@
     border: none;
     border-radius: 10px;
     font-family: var(--font-display);
-    font-weight: 600;
+    font-weight: 400;
     font-size: 0.88rem;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -396,7 +463,7 @@
   .cta-btn:hover {
     background: var(--accent-hover);
     transform: translateY(-1px);
-    box-shadow: 0 8px 25px rgba(232,98,42,0.25);
+    box-shadow: 0 8px 25px rgba(63,162,59,0.25);
   }
 
   .cta-note {
@@ -448,11 +515,57 @@
     .cta-box { padding: 2rem 1.25rem; }
     .info-block { padding: 2rem 1.25rem; }
     .hero { padding: 6.5rem 1.25rem 2rem; }
+    .hero-flyer {
+      top: 5.5rem;
+      right: -3rem;
+      width: clamp(130px, 48vw, 210px);
+      animation-name: droneFlyInMobile;
+    }
     .nav { padding: 0.75rem 1rem; }
     .nav-status { display: none; }
     footer { flex-direction: column; gap: 0.75rem; text-align: center; }
     .image-strip { gap: 2px; }
     .image-slot { height: 180px; }
+  }
+
+  @keyframes droneFlyInMobile {
+    0% {
+      opacity: 0;
+      transform: perspective(520px) translate(120px, -90px) scale(0.24) rotateX(22deg) rotateY(-34deg) rotateZ(-16deg);
+    }
+    16% {
+      opacity: 0.95;
+    }
+    42% {
+      opacity: 0.95;
+      transform: perspective(520px) translate(-26px, 54px) scale(1.02) rotateX(16deg) rotateY(-22deg) rotateZ(-6deg);
+    }
+    56% {
+      opacity: 0.95;
+      transform: perspective(520px) translate(-26px, 54px) scale(1.02) rotateX(16deg) rotateY(-22deg) rotateZ(-6deg);
+    }
+    66% {
+      opacity: 0.88;
+      transform: perspective(520px) translate(-20px, 40px) scale(0.98) rotateX(16.4deg) rotateY(-22.8deg) rotateZ(-3deg);
+    }
+    80% {
+      opacity: 0.68;
+      transform: perspective(520px) translate(-6px, 20px) scale(0.9) rotateX(17deg) rotateY(-24deg) rotateZ(1deg);
+    }
+    92% {
+      opacity: 0.32;
+      transform: perspective(520px) translate(22px, -18px) scale(0.76) rotateX(18deg) rotateY(-26deg) rotateZ(5deg);
+    }
+    100% {
+      opacity: 0;
+      transform: perspective(520px) translate(48px, -62px) scale(0.64) rotateX(19deg) rotateY(-28deg) rotateZ(8deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-flyer {
+      display: none;
+    }
   }
 </style>
 </head>
@@ -464,7 +577,7 @@
 <nav class="nav">
   <a href="#" class="logo">
     <div class="logo-mark">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="1.2"/><circle cx="12" cy="12" r="1.5" fill="var(--accent)" stroke="none"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><polygon points="12,3.5 13.5,11 12,9.5 10.5,11" fill="var(--accent)" stroke="none"/><polygon points="12,20.5 13.5,13 12,14.5 10.5,13" fill="var(--text-muted)" stroke="none"/></svg>
+      <img src="logo-dark.svg" alt="Nord-Copter" width="38" height="38">
     </div>
     <div class="logo-text">Nord<span>-</span>Copter</div>
   </a>
@@ -477,6 +590,7 @@
 <!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-glow"></div>
+  <img class="hero-flyer" src="logo-dark.svg" alt="" aria-hidden="true">
 
   <div class="hero-badge">
     45 Jahre Fliegerei · 35 Jahre Verkehrsfliegerei · Ausbilder & Prüfer
@@ -549,6 +663,7 @@
   <div class="footer-left">© 2026 Nord-Copter · Norddeutschland</div>
   <div class="footer-right">
     <a href="mailto:a.ruedel@gmx.de">Kontakt</a>
+    <a href="impressum-barrierefreiheit.html">Impressum</a>
   </div>
 </footer>
 
